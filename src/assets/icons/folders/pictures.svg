@@ -1,0 +1,38 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景底座 -->
+  <rect width="512" height="512" rx="120" fill="#f5f5f7"/>
+  <rect x="40" y="40" width="432" height="432" rx="80" fill="#ffffff"/>
+  
+  <!-- 文件夹图标 -->
+  <g>
+    <!-- 文件夹主体 -->
+    <path d="M140 240L100 280L100 380L140 420L372 420L412 380L412 280L372 240H140Z" fill="url(#picturesFolderGradient)"/>
+    <!-- 文件夹顶部 -->
+    <path d="M140 240L372 240L372 280L140 260V240Z" fill="url(#picturesFolderTopGradient)"/>
+    <!-- 图片图标 -->
+    <rect x="190" y="290" width="60" height="60" rx="5" fill="rgba(255,255,255,0.7)"/>
+    <circle cx="220" cy="320" r="20" fill="rgba(255,255,255,0.5)"/>
+    <rect x="270" y="290" width="60" height="60" rx="5" fill="rgba(255,255,255,0.7)"/>
+    <path d="M290 290L310 310L290 330L270 310L290 290Z" fill="rgba(255,255,255,0.5)"/>
+    <rect x="350" y="290" width="60" height="60" rx="5" fill="rgba(255,255,255,0.7)"/>
+    <path d="M370 290V330H390V350H370V390H350V350H330V330H350V290H370Z" fill="rgba(255,255,255,0.5)"/>
+  </g>
+  
+  <!-- 渐变定义 -->
+  <defs>
+    <linearGradient id="picturesFolderGradient" x1="100" y1="240" x2="412" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9C27B0"/>
+      <stop offset="1" stop-color="#673AB7"/>
+    </linearGradient>
+    <linearGradient id="picturesFolderTopGradient" x1="140" y1="240" x2="372" y2="280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#AB47BC"/>
+      <stop offset="1" stop-color="#7E57C2"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 高光效果 -->
+  <circle cx="160" cy="260" r="40" fill="white" opacity="0.2"/>
+  
+  <!-- 阴影效果 -->
+  <rect x="50" y="50" width="412" height="412" rx="70" fill="rgba(0,0,0,0.05)"/>
+</svg>

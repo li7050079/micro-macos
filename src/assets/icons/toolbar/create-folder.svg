@@ -1,0 +1,30 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景底座 -->
+  <rect width="512" height="512" rx="120" fill="#f5f5f7"/>
+  <rect x="40" y="40" width="432" height="432" rx="80" fill="#ffffff"/>
+  
+  <!-- 创建文件夹图标 -->
+  <g>
+    <!-- 文件夹主体 -->
+    <path d="M180 240L140 280L140 380L180 420L332 420L372 380L372 280L332 240H180Z" fill="url(#createFolderGradient)"/>
+    <!-- 文件夹顶部 -->
+    <path d="M180 240L332 240L332 280L180 260V240Z" fill="url(#createFolderGradient)"/>
+    <!-- 加号图标 -->
+    <path d="M256 280L256 380" stroke="white" stroke-width="20" stroke-linecap="round"/>
+    <path d="M206 330L306 330" stroke="white" stroke-width="20" stroke-linecap="round"/>
+  </g>
+  
+  <!-- 渐变定义 -->
+  <defs>
+    <linearGradient id="createFolderGradient" x1="140" y1="240" x2="372" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4CAF50"/>
+      <stop offset="1" stop-color="#2E7D32"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 高光效果 -->
+  <circle cx="160" cy="260" r="20" fill="white" opacity="0.2"/>
+  
+  <!-- 阴影效果 -->
+  <rect x="50" y="50" width="412" height="412" rx="70" fill="rgba(0,0,0,0.05)"/>
+</svg>

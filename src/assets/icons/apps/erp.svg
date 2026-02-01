@@ -1,0 +1,47 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景底座 -->
+  <rect width="512" height="512" rx="120" fill="#f5f5f7"/>
+  <rect x="20" y="20" width="472" height="472" rx="100" fill="url(#erpBgGradient)"/>
+  <rect x="40" y="40" width="432" height="432" rx="80" fill="#ffffff"/>
+  
+  <!-- ERP 图标 -->
+  <g>
+    <!-- 齿轮图标 -->
+    <circle cx="200" cy="256" r="80" fill="url(#erpGearGradient)"/>
+    <circle cx="200" cy="256" r="40" fill="white"/>
+    <rect x="190" y="160" width="20" height="40" rx="5" fill="white"/>
+    <rect x="190" y="320" width="20" height="40" rx="5" fill="white"/>
+    <rect x="110" y="246" width="40" height="20" rx="5" fill="white"/>
+    <rect x="260" y="246" width="40" height="20" rx="5" fill="white"/>
+    <path d="M135 190L155 170" stroke="white" stroke-width="12" stroke-linecap="round"/>
+    <path d="M245 170L265 190" stroke="white" stroke-width="12" stroke-linecap="round"/>
+    <path d="M135 322L155 342" stroke="white" stroke-width="12" stroke-linecap="round"/>
+    <path d="M245 342L265 322" stroke="white" stroke-width="12" stroke-linecap="round"/>
+    
+    <!-- 图表图标 -->
+    <rect x="280" y="200" width="100" height="120" rx="10" fill="url(#erpChartGradient)"/>
+    <path d="M290 300L310 260L330 280L350 240L370 270L390 250L410 290" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  
+  <!-- 渐变定义 -->
+  <defs>
+    <linearGradient id="erpBgGradient" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4CAF50" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#2E7D32" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="erpGearGradient" x1="120" y1="176" x2="280" y2="336" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4CAF50"/>
+      <stop offset="1" stop-color="#2E7D32"/>
+    </linearGradient>
+    <linearGradient id="erpChartGradient" x1="280" y1="200" x2="380" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#43A047"/>
+      <stop offset="1" stop-color="#2E7D32"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 高光效果 -->
+  <circle cx="160" cy="200" r="40" fill="white" opacity="0.2"/>
+  
+  <!-- 阴影效果 -->
+  <rect x="30" y="30" width="452" height="452" rx="90" fill="rgba(0,0,0,0.05)"/>
+</svg>

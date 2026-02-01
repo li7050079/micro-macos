@@ -1,0 +1,43 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景底座 -->
+  <rect width="512" height="512" rx="120" fill="#f5f5f7"/>
+  <rect x="40" y="40" width="432" height="432" rx="80" fill="#ffffff"/>
+  
+  <!-- 文件夹图标 -->
+  <g>
+    <!-- 文件夹主体 -->
+    <path d="M140 240L100 280L100 380L140 420L372 420L412 380L412 280L372 240H140Z" fill="url(#systemToolsFolderGradient)"/>
+    <!-- 文件夹顶部 -->
+    <path d="M140 240L372 240L372 280L140 260V240Z" fill="url(#systemToolsFolderTopGradient)"/>
+    <!-- 系统工具图标 -->
+    <circle cx="200" cy="320" r="25" fill="rgba(255,255,255,0.7)"/>
+    <path d="M200 295L200 315" stroke="rgba(0,0,0,0.3)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M200 325L200 345" stroke="rgba(0,0,0,0.3)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M175 320L195 320" stroke="rgba(0,0,0,0.3)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M205 320L225 320" stroke="rgba(0,0,0,0.3)" stroke-width="6" stroke-linecap="round"/>
+    <rect x="260" y="300" width="50" height="40" rx="5" fill="rgba(255,255,255,0.7)"/>
+    <path d="M275 310L295 310" stroke="rgba(0,0,0,0.3)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M275 320L295 320" stroke="rgba(0,0,0,0.3)" stroke-width="4" stroke-linecap="round"/>
+    <rect x="330" y="300" width="50" height="40" rx="5" fill="rgba(255,255,255,0.7)"/>
+    <path d="M340 300L360 320" stroke="rgba(0,0,0,0.3)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M340 340L360 320" stroke="rgba(0,0,0,0.3)" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  
+  <!-- 渐变定义 -->
+  <defs>
+    <linearGradient id="systemToolsFolderGradient" x1="100" y1="240" x2="412" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#607D8B"/>
+      <stop offset="1" stop-color="#455A64"/>
+    </linearGradient>
+    <linearGradient id="systemToolsFolderTopGradient" x1="140" y1="240" x2="372" y2="280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#78909C"/>
+      <stop offset="1" stop-color="#546E7A"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 高光效果 -->
+  <circle cx="160" cy="260" r="40" fill="white" opacity="0.2"/>
+  
+  <!-- 阴影效果 -->
+  <rect x="50" y="50" width="412" height="412" rx="70" fill="rgba(0,0,0,0.05)"/>
+</svg>

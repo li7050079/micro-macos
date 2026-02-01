@@ -1,0 +1,38 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景底座 -->
+  <rect width="512" height="512" rx="120" fill="#f5f5f7"/>
+  <rect x="20" y="20" width="472" height="472" rx="100" fill="url(#inventoryBgGradient)"/>
+  <rect x="40" y="40" width="432" height="432" rx="80" fill="#ffffff"/>
+  
+  <!-- Inventory 图标 -->
+  <g>
+    <!-- 仓库图标 -->
+    <path d="M160 240L120 280L120 380L160 420L362 420L402 380L402 280L362 240H160Z" fill="url(#inventoryWarehouseGradient)"/>
+    <path d="M160 240L362 240L362 260L160 260V240Z" fill="url(#inventoryWarehouseGradient)"/>
+    <path d="M256 240V380" stroke="white" stroke-width="12" stroke-linecap="round"/>
+    
+    <!-- 货物图标 -->
+    <rect x="180" y="280" width="60" height="60" rx="5" fill="white"/>
+    <rect x="272" y="280" width="60" height="60" rx="5" fill="white"/>
+    <rect x="180" y="350" width="60" height="50" rx="5" fill="white"/>
+    <rect x="272" y="350" width="60" height="50" rx="5" fill="white"/>
+  </g>
+  
+  <!-- 渐变定义 -->
+  <defs>
+    <linearGradient id="inventoryBgGradient" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF9800" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#E65100" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="inventoryWarehouseGradient" x1="120" y1="240" x2="402" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF9800"/>
+      <stop offset="1" stop-color="#E65100"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 高光效果 -->
+  <circle cx="180" cy="260" r="40" fill="white" opacity="0.2"/>
+  
+  <!-- 阴影效果 -->
+  <rect x="30" y="30" width="452" height="452" rx="90" fill="rgba(0,0,0,0.05)"/>
+</svg>
