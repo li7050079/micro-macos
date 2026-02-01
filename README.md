@@ -85,7 +85,19 @@ src/
 ├── App.vue           # 应用入口
 └── main.js           # 主应用入口
 ```
-
+## 效果截图
+- 桌面
+ <img src="docs/images/desktop.png">
+- 所有应用
+ <img src="docs/images/launchpad.png">
+- 文件系统
+  <img src="docs/images/fileSystem.png">
+- 系统设置
+  <img src="docs/images/setting.png">
+- 多桌面切换
+  <img src="docs/images/muti-desktop.png">
+- 应用窗口
+  <img src="docs/images/app.png">
 ## 🚀 快速开始
 
 ### 安装依赖
