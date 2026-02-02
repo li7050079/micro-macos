@@ -153,7 +153,7 @@ class AppManagerService {
           container: '#app-container',
           activeRule: '/react',
           iframe: true,
-          type: 'app',
+          type: 'folder',
           children: [
             {
               id: 'react-home',
@@ -183,14 +183,14 @@ class AppManagerService {
           container: '#app-container',
           activeRule: '/angular',
           iframe: true,
-          type: 'app',
+          type: 'folder',
           children: [
             {
               id: 'angular-home',
               name: '首页',
               icon: '/src/assets/icons/apps/angular.svg',
               type: 'app',
-              path: '/',
+              path: '/#/',
               params: {},
               query: {}
             },
@@ -199,7 +199,7 @@ class AppManagerService {
               name: '关于',
               icon: '/src/assets/icons/apps/angular.svg',
               type: 'app',
-              path: '/about',
+              path: '/#/about',
               params: {},
               query: {}
             }

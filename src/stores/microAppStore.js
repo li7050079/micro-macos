@@ -127,7 +127,7 @@ export const useMicroAppStore = defineStore('microApp', {
               appConfig = {
                 ...parentApp,
                 id: appName,
-                name: appName,
+                name: parentApp.id, // 使用父应用的id作为name字段的值，而不是使用子应用的id
                 path: appPath,
                 params: targetApp.params,
                 query: targetApp.query,

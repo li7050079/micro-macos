@@ -46,9 +46,12 @@ function bootstrapApp() {
   const root = ReactDOM.createRoot(document.getElementById('root'))
   
   // 修复basename配置，确保在独立运行时能正确匹配URL
-  const basename = window.__MICRO_APP_BASE_ROUTE__ || '/'
+  // 当在iframe模式下运行时，不使用basename，因为iframe的URL是直接指向子应用的入口地址
+  const isIframe = window.self !== window.top
+  const basename = isIframe ? '/' : (window.__MICRO_APP_BASE_ROUTE__ || '/')
   console.log('🔧 Router basename:', basename)
   console.log('🔧 Current URL:', window.location.href)
+  console.log('🔧 Is iframe:', isIframe)
   
   root.render(
     <React.StrictMode>
@@ -68,17 +71,20 @@ function bootstrapApp() {
 const isMicroApp = window.__MICRO_APP_ENVIRONMENT__
 
 if (isMicroApp) {
-  window.__MICRO_APP_NAME__ = 'react'
-  window.__MICRO_APP_BASE_ROUTE__ = window.__MICRO_APP_BASE_ROUTE__ || '/react'
+  // 不硬编码应用名称，使用主应用传递的值
+  const appName = window.__MICRO_APP_NAME__ || 'react'
+  // 当在iframe模式下运行时，不设置__MICRO_APP_BASE_ROUTE__为'/react'，因为iframe的URL是直接指向子应用的入口地址
+  const isIframe = window.self !== window.top
+  window.__MICRO_APP_BASE_ROUTE__ = isIframe ? '/' : (window.__MICRO_APP_BASE_ROUTE__ || '/react')
   
   // 注册微前端生命周期
-  window[`micro-app-${window.__MICRO_APP_NAME__}`] = {
+  window[`micro-app-${appName}`] = {
     mount: () => {
-      console.log('React app mounting as micro-app')
+      console.log('React app mounting as micro-app:', appName)
       return bootstrapApp()
     },
     unmount: () => {
-      console.log('React app unmounting from micro-app')
+      console.log('React app unmounting from micro-app:', appName)
       if (rootInstance) {
         rootInstance.unmount()
         rootInstance = null
@@ -87,7 +93,9 @@ if (isMicroApp) {
     }
   }
   
-  console.log('React micro-app lifecycle registered')
+  console.log('React micro-app lifecycle registered with name:', appName)
+  console.log('React micro-app base route:', window.__MICRO_APP_BASE_ROUTE__)
+  console.log('React micro-app is iframe:', isIframe)
 } else {
   // 独立运行模式
   console.log('React app running in standalone mode')

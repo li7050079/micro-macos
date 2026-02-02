@@ -63,22 +63,26 @@ function handleRouteInfo() {
 
 // 注册微前端生命周期
 if (isMicroApp) {
-  window.__MICRO_APP_NAME__ = 'angular'
-  window.__MICRO_APP_BASE_ROUTE__ = window.__MICRO_APP_BASE_ROUTE__ || '/angular'
+  // 不硬编码应用名称，使用主应用传递的值
+  const appName = window.__MICRO_APP_NAME__ || 'angular'
+  // 当在iframe模式下运行时，不设置__MICRO_APP_BASE_ROUTE__为'/angular'，因为iframe的URL是直接指向子应用的入口地址
+  const isIframe = window.self !== window.top
+  window.__MICRO_APP_BASE_ROUTE__ = isIframe ? '/' : (window.__MICRO_APP_BASE_ROUTE__ || '/angular')
   
   console.log('🔧 注册Angular微前端生命周期钩子')
-  console.log('🔧 __MICRO_APP_NAME__:', window.__MICRO_APP_NAME__)
+  console.log('🔧 App name:', appName)
   console.log('🔧 __MICRO_APP_BASE_ROUTE__:', window.__MICRO_APP_BASE_ROUTE__)
   console.log('🔧 __MICRO_APP_PROPS__:', window.__MICRO_APP_PROPS__)
+  console.log('🔧 Is iframe:', isIframe)
   
   // 注册生命周期钩子
-  window['micro-app-angular'] = {
+  window[`micro-app-${appName}`] = {
     mount: () => {
-      console.log('🚀 Angular app mounting as micro-app')
+      console.log('🚀 Angular app mounting as micro-app:', appName)
       return bootstrapApp()
     },
     unmount: () => {
-      console.log('📤 Angular app unmounting from micro-app')
+      console.log('📤 Angular app unmounting from micro-app:', appName)
       if (appModuleRef) {
         // 销毁应用实例
         appModuleRef.destroy()
@@ -92,7 +96,7 @@ if (isMicroApp) {
   }
   
   console.log('✅ Angular micro-app lifecycle registered successfully')
-  console.log('🔍 注册的钩子:', window['micro-app-angular'])
+  console.log('🔍 注册的钩子:', window[`micro-app-${appName}`])
 } else {
   // 独立运行模式
   console.log('🌍 Angular app running in standalone mode')
