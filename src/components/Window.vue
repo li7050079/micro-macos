@@ -55,7 +55,6 @@
 <script setup>
 import { useWindowStore } from '../stores/windowStore'
 import { useMicroAppStore } from '../stores/microAppStore'
-import { useDesktopStore } from '../stores/desktopStore'
 import { onMounted, onUnmounted, ref, watch, nextTick } from 'vue'
 import FileSystem from './FileSystem.vue'
 import ConfigPanel from './ConfigPanel.vue'
@@ -80,7 +79,6 @@ const containerRef = ref(null)
 // Stores
 const windowStore = useWindowStore()
 const microAppStore = useMicroAppStore()
-const desktopStore = useDesktopStore()
 
 // Methods
 const activateWindow = (window) => {
@@ -258,8 +256,8 @@ const adjustMicroAppSize = () => {
   // 查找并调整micro-app元素尺寸
   const microAppElement = containerRef.value.querySelector('micro-app')
   if (microAppElement) {
-    microAppElement.style.width = `${contentRect.width}px`
-    microAppElement.style.height = `${contentRect.height}px`
+    microAppElement.style.width = `${contentRect.width-10}px`
+    microAppElement.style.height = `${contentRect.height-10}px`
     console.log('📏 调整micro-app元素尺寸:', {
       width: contentRect.width,
       height: contentRect.height

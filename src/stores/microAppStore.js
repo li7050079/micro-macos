@@ -327,40 +327,6 @@ export const useMicroAppStore = defineStore('microApp', {
       // 可以在这里添加性能监控逻辑
     },
     
-    // 记录性能数据
-    recordPerformanceData(appName, type, value) {
-      if (!this.performanceStats[appName]) {
-        this.performanceStats[appName] = {}
-      }
-      this.performanceStats[appName][type] = {
-        value,
-        timestamp: Date.now()
-      }
-    },
-    
-    // 优化渲染性能
-    optimizeRendering(containerId) {
-      const appInfo = this.microAppInstances.get(containerId)
-      if (appInfo) {
-        // 这里可以添加渲染优化逻辑
-        // 例如使用虚拟列表、节流/防抖等技术
-        console.log('Optimizing rendering for app:', appInfo.appName)
-      }
-    },
-    
-    // 优化网络请求
-    optimizeNetworkRequests(appName) {
-      // 这里可以添加网络优化逻辑
-      // 例如请求缓存、批量请求等
-      console.log('Optimizing network requests for app:', appName)
-    },
-    
-    // 预加载常用应用
-    preloadFrequentlyUsedApps() {
-      const apps = this.mostUsedApps
-      console.log('Preloading frequently used apps:', apps)
-      
-      // 这里可以实现预加载逻辑
-    }
+
   }
 })

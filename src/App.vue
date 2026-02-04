@@ -109,7 +109,6 @@ import { useWindowStore } from './stores/windowStore'
 import { useMicroAppStore } from './stores/microAppStore'
 import { useDesktopStore } from './stores/desktopStore'
 import { useConfigStore } from './stores/configStore'
-import ConfigPanel from './components/ConfigPanel.vue'
 import DesktopIcon from './components/DesktopIcon.vue'
 import Window from './components/Window.vue'
 import Dock from './components/Dock.vue'
@@ -118,7 +117,6 @@ import DesktopMenu from './components/DesktopMenu.vue'
 import NotificationCenter from './components/NotificationCenter.vue'
 import SystemTray from './components/SystemTray.vue'
 import DesktopSwitcher from './components/DesktopSwitcher.vue'
-import FileSystem from './components/FileSystem.vue'
 import FileContextMenu from './components/FileContextMenu.vue'
 import AppContextMenu from './components/AppContextMenu.vue'
 import Launchpad from './components/Launchpad.vue'
@@ -133,10 +131,9 @@ const configStore = useConfigStore()
 // 响应式状态
 const showSystemTray = ref(true)
 const showDock = ref(true)
+const dragState = ref(null)
 const isMouseOverSystemTray = ref(false)
 const isMouseOverDock = ref(false)
-const showConfigPanel = ref(false)
-const dragState = ref(null)
 let dragAnimationFrame = null
 
 
@@ -208,7 +205,6 @@ const showLaunchpad = computed(() => desktopStore.showLaunchpad)
 
 // 配置相关计算属性
 const desktopConfig = computed(() => configStore.desktop)
-const dockConfig = computed(() => configStore.dock)
 const features = computed(() => configStore.features)
 
 // 窗口状态计算属性
@@ -479,10 +475,6 @@ const closeAllContextMenus = () => {
   document.removeEventListener('click', closeDesktopMenu)
 }
 
-const closeConfigPanel = () => {
-  showConfigPanel.value = false
-}
-
 const showSystemPreferences = () => {
   // 通过Window组件打开配置面板
   const configWindow = windowStore.createWindow('config-panel', '系统偏好设置', {
@@ -595,7 +587,7 @@ onMounted(async () => {
         showDock.value = true
         isMouseOverDock.value = true
       })
-      
+
       dockElement.addEventListener('mouseleave', () => {
         isMouseOverDock.value = false
         if (hasMaximizedWindow.value) {
